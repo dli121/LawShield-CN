@@ -1,4 +1,4 @@
-# 🛡️ LawShield-CN (律盾)
+# 🛡️ LawShield-CN (律盾) Demo 
 
 > **Enterprise-Grade AI Governance Gateway for China Compliance**
 > 
@@ -37,3 +37,4 @@ pip install -r requirements.txt
 
 # 3. Run Gateway
 python main.py
+
