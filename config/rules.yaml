@@ -1,0 +1,30 @@
+# LawShield-CN 核心规则集
+# 版本: v1.0.0
+
+global_settings:
+  default_action: "allow"  # 默认放行
+  sensitivity_level: "strict" # 严格模式
+
+# 1. 强拦截规则 (Block List)
+# 触发此类关键词，直接中断对话，不发给 LLM
+block_rules:
+  - category: "financial_crime"
+    name: "金融犯罪"
+    keywords: ["洗钱", "做假账", "逃税", "非法集资", "地下钱庄"]
+    legal_ref: "《中华人民共和国刑法》第一百九十一条"
+    response_msg: "【风险拦截】您的提问涉及金融犯罪意图，系统已自动阻断。"
+
+  - category: "data_security"
+    name: "核心数据泄露"
+    keywords: ["导出所有用户数据", "获取管理员密码", "破解数据库"]
+    legal_ref: "《中华人民共和国数据安全法》"
+    response_msg: "【安全警告】禁止尝试获取系统核心数据或权限。"
+
+# 2. 敏感审计规则 (Monitor List)
+# 触发此类关键词，允许通过，但在后台打上高风险标签，并在日志中记录
+monitor_rules:
+  - category: "ad_compliance"
+    name: "广告法违规"
+    keywords: ["稳赚不赔", "世界第一", "绝对安全", "100%收益"]
+    legal_ref: "《中华人民共和国广告法》"
+    risk_level: "high"
