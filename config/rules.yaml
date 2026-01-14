@@ -16,7 +16,7 @@ block_rules:
 
   - category: "data_security"
     name: "核心数据泄露"
-    keywords: ["导出所有用户数据", "获取管理员密码", "破解数据库"]
+    keywords: ["导出所有用户数据", "获取管理员密码", "破解数据库", "数据库密码", "破解"]
     legal_ref: "《中华人民共和国数据安全法》"
     response_msg: "【安全警告】禁止尝试获取系统核心数据或权限。"
 
